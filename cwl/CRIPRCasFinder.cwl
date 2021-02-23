@@ -48,10 +48,6 @@ inputs:
       prefix: -def
 
 outputs:
-  crisprcasfinder_tables:
-    type: File[]
-    outputBinding:
-      glob: "CRIPRCasFinder_out/TSV/*.tsv"
   crisprcasfinder_json:
     type: File
     outputBinding:
