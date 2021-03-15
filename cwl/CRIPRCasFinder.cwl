@@ -51,7 +51,7 @@ outputs:
   crisprcasfinder_json:
     type: File
     outputBinding:
-      glob: "CRIPRCasFinder_out/results.json"
+      glob: "CRIPRCasFinder_out/result.json"
   
 stdout: crispcasfinder.log
 stderr: crispcasfinder.err
