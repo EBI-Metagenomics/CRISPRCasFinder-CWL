@@ -68,8 +68,14 @@ RUN wget -q https://dl.bintray.com/gem-pasteur/MacSyFinder/macsyfinder-${macsyfi
     ln -s /opt/macsyfinder-1.0.5/bin/macsyfinder /usr/local/bin/
 ENV MACSY_HOME=/opt/macsyfinder-1.0.5/
 
+# add scripts to format output
+WORKDIR /usr/local/bin
+COPY crisprcf2fasta.py /usr/local/bin/
+COPY crisprcf2gff.py /usr/local/bin/
+RUN chmod +x /usr/local/bin/*
+
 LABEL software="CRISPRCasFinder"
-LABEL software.version="4.2.20"
+LABEL software.version="4.2.21"
 LABEL description="CRISPRCasFinder is an updated, improved, and integrated version of CRISPRFinder and CasFinder."
 LABEL website="https://github.com/dcouvin/CRISPRCasFinder/"
 LABEL license="https://github.com/dcouvin/CRISPRCasFinder/blob/master/COPYRIGHT"
