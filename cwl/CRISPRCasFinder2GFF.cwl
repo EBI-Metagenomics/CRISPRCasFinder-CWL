@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 label: CRIPRCasFinder2GFF
 doc: |
-      convert CRIPRCasFinder output to GFF.
+      convert CRISPRCasFinder output to GFF.
 
 requirements:
   ResourceRequirement:
@@ -10,7 +10,7 @@ requirements:
     ramMin: 8000
 hints:
   DockerRequirement:
-    dockerPull: jcaballero/crisprcasfinder:4.2.20
+    dockerPull: jcaballero/crisprcasfinder:4.2.21
 
 baseCommand: [ "crisprcf2gff.py" ]
 
@@ -24,7 +24,7 @@ inputs:
   out_gff:
     type: string?
     label: output file with features in GFF
-    default: "CrisprCasFinder_Spacers.gff"
+    default: "CrisprCasFinder_Spacers.gff3"
     inputBinding:
       position: 2
       prefix: -o
@@ -32,6 +32,7 @@ inputs:
 outputs:
   crisprcasfinder_gff:
     type: File
+    format: edam:format_1975
     outputBinding:
       glob: $(inputs.out_gff)
   

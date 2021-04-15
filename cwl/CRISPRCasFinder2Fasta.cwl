@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 label: CRIPRCasFinder2Fasta
 doc: |
-      convert CRIPRCasFinder output to Fasta.
+      convert CRISPRCasFinder output to Fasta.
 
 requirements:
   ResourceRequirement:

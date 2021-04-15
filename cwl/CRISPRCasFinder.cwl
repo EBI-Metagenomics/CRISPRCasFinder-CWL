@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 label: CRIPRCasFinder
 doc: |
-      Implementation of CRIPRCasFinder.
+      Implementation of CRISPRCasFinder.
 
 requirements:
   ResourceRequirement:
     coresMin: 1
-    ramMin: 8000
+    ramMin: 2000
 hints:
   DockerRequirement:
     dockerPull: jcaballero/crisprcasfinder:4.2.21
