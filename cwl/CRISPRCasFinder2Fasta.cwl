@@ -7,7 +7,7 @@ doc: |
 requirements:
   ResourceRequirement:
     coresMin: 1
-    ramMin: 8000
+    ramMin: 2000
 hints:
   DockerRequirement:
     dockerPull: jcaballero/crisprcasfinder:4.2.21
