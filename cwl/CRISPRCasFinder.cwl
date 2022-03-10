@@ -10,7 +10,7 @@ requirements:
     ramMin: 2000
 hints:
   DockerRequirement:
-    dockerPull: jcaballero/crisprcasfinder:4.2.21
+    dockerPull: microbiomeinformatics/pipeline-v5.crisprcasfinder:4.2.21
 
 baseCommand: [ "CRISPRCasFinder.pl" ]
 
