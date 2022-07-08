@@ -28,7 +28,7 @@ inputs:
     type: string?
     label: output file with spacer sequences (fasta)
     inputBinding:
-      valueFrom: $(inputs.seq_name.basename)_CRISPRCasFinder_Spacers.fasta
+      valueFrom: $(inputs.seq_name.nameroot)_CRISPRCasFinder_Spacers.fasta
       position: 2
       prefix: -o
 
