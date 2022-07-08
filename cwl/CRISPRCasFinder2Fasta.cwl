@@ -15,6 +15,9 @@ hints:
 baseCommand: [ "crisprcf2fasta.py" ]
 
 inputs:
+  seq_name:
+    type: File
+    label: sequence input file for renaming
   in_json:
     type: File
     label: input JSON file
@@ -24,7 +27,7 @@ inputs:
   out_fasta:
     type: string?
     label: output file with spacer sequences (fasta)
-    default: "CrisprCasFinder_Spacers.fasta"
+    valueFrom: $(inputs.sequences.basename)_CRISPRCasFinder_Spacers.fasta
     inputBinding:
       position: 2
       prefix: -o

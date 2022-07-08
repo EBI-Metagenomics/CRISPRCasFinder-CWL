@@ -15,6 +15,9 @@ hints:
 baseCommand: [ "crisprcf2gff.py" ]
 
 inputs:
+  seq_name:
+    type: File
+    label: sequence input file for renaming
   in_json:
     type: File
     label: input JSON file
@@ -24,7 +27,7 @@ inputs:
   out_gff:
     type: string?
     label: output file with features in GFF
-    default: "CrisprCasFinder_Spacers.gff3"
+    valueFrom: $(inputs.seq_name.basename)_CRISPRCasFinder.gff3
     inputBinding:
       position: 2
       prefix: -o
