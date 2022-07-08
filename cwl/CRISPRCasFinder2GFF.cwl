@@ -27,8 +27,8 @@ inputs:
   out_gff:
     type: string?
     label: output file with features in GFF
-    valueFrom: $(inputs.seq_name.basename)_CRISPRCasFinder.gff3
     inputBinding:
+      valueFrom: $(inputs.seq_name.basename)_CRISPRCasFinder.gff3
       position: 2
       prefix: -o
 
