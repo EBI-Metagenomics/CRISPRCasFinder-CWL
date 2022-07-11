@@ -24,20 +24,17 @@ inputs:
     inputBinding:
       position: 1
       prefix: -j
-  out_fasta:
-    type: string?
-    label: output file with spacer sequences (fasta)
-    inputBinding:
-      valueFrom: $(inputs.seq_name.nameroot)_CRISPRCasFinder_Spacers.fasta
-      position: 2
-      prefix: -o
+
+arguments:
+  - -o
+  -  $(inputs.seq_name.nameroot)_CRISPRCasFinder_Spacers.fasta
 
 outputs:
   crisprcasfinder_fasta:
     type: File
     format: edam:format_1929
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: '*_CRISPRCasFinder_Spacers.fasta'
   
 stdout: crisprcf2fasta.log
 stderr: crisprcf2fasta.err

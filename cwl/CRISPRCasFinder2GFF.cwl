@@ -24,20 +24,17 @@ inputs:
     inputBinding:
       position: 1
       prefix: -j
-  out_gff:
-    type: string?
-    label: output file with features in GFF
-    inputBinding:
-      valueFrom: $(inputs.seq_name.nameroot)_CRISPRCasFinder.gff3
-      position: 2
-      prefix: -o
+
+arguments:
+  - -o
+  -  $(inputs.seq_name.nameroot)_CRISPRCasFinder.gff3
 
 outputs:
   crisprcasfinder_gff:
     type: File
     format: edam:format_1975
     outputBinding:
-      glob: $(inputs.out_gff)
+      glob: '*_CRISPRCasFinder.gff3'
   
 stdout: crisprcf2gff.log
 stderr: crisprcf2gff.err
