@@ -1,4 +1,0 @@
-sequences:
-  class: File
-  format: edam:format_1929
-  path: in/sequence.fasta
