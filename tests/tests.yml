@@ -6,7 +6,7 @@
   output:
     crisprcasfinder_json:
       basename: result.json
-      checksum: sha1$36317ca0daa17ba411a75e40ddc44dc86fdf75ff
+      #checksum: sha1$36317ca0daa17ba411a75e40ddc44dc86fdf75ff
       class: File
       location: Any
       path: Any
