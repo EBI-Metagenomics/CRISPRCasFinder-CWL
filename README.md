@@ -29,8 +29,7 @@ pre-commit will run a set of pre-configured tools before allowing you to commit 
 
 ## Workflow
 
-Pipeline diagram built with [cwlviewer](https://view.commonwl.org/) or similar.
-
+![Diagram](pipeline.png)
 # Tests
 
 CWL tests are executed with [cwltest](https://github.com/common-workflow-language/cwltest).
