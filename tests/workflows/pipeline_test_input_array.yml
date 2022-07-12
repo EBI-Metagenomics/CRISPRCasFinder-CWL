@@ -1,0 +1,7 @@
+sequences:
+  - class: File
+    format: edam:format_1929
+    path: ../in/ERR1234567_bin.1.fa
+  - class: File
+    format: edam:format_1929
+    path: ../in/ERR1234567_bin.2.fa

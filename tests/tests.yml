@@ -1,0 +1,88 @@
+# example unit test for the workflow
+- job: tools/CRISPRCasFinder/test.yml
+  tool: ../src/tools/CRISPRCasFinder.cwl
+  short_name: CRISPRCasFinder.cwl
+  doc: run CRISPRCasFinder
+  output:
+    crisprcasfinder_json:
+      basename: result.json
+      checksum: sha1$0d72b0b650b0ec37e318bafda28b50fad8267e8d
+      class: File
+      location: Any
+      path: Any
+      size: 17534
+- job: tools/CRISPRCasFinder2Fasta/test.yml
+  tool: ../src/tools/CRISPRCasFinder2Fasta.cwl
+  short_name: CRISPRCasFinder2Fasta.cwl
+  doc: parse CRISPRCasFinder output to fasta
+  output:
+    crisprcasfinder_fasta:
+      basename: ERR1234567_bin.1_CRISPRCasFinder_Spacers.fasta
+      checksum: sha1$bdd6090031c89e46cc3d3299066367c921d5fb31
+      class: File
+      location: Any
+      path: Any
+      size: 3627
+- job: tools/CRISPRCasFinder2GFF/test.yml
+  tool: ../src/tools/CRISPRCasFinder2GFF.cwl
+  short_name: CRISPRCasFinder2GFF.cwl
+  doc: parse CRISPRCasFinder output to gff
+  output:
+    crisprcasfinder_gff:
+      basename: ERR1234567_bin.1_CRISPRCasFinder.gff3
+      checksum: sha1$ddcdbbd534b7b3623fab87254ae8689c8e1200dd
+      class: File
+      location: Any
+      path: Any
+      size: 16716
+- job: workflows/pipeline_test_input.yml
+  tool: ../src/workflows/runCRISPRCasFinderl.cwl
+  short_name: runCRISPRCasFinderl.cwl
+  doc: full pipeline for single file
+  output:
+    crisprcasfinder_fasta:
+      basename: ERR1234567_bin.1_CRISPRCasFinder_Spacers.fasta
+      checksum: sha1$bdd6090031c89e46cc3d3299066367c921d5fb31
+      class: File
+      location: Any
+      path: Any
+      size: 3627
+    crisprcasfinder_gff:
+      basename: ERR1234567_bin.1_CRISPRCasFinder.gff3
+      checksum: sha1$ddcdbbd534b7b3623fab87254ae8689c8e1200dd
+      class: File
+      location: Any
+      path: Any
+      size: 16716
+- job: workflows/pipeline_test_input_array.yml
+  tool: ../src/workflows/runCRISPRCasFinderl_array.cwl
+  short_name: runCRISPRCasFinderl_array.cwl
+  doc: full pipeline for multiple files
+  output:
+    crisprcasfinder_fasta:
+      - basename: ERR1234567_bin.1_CRISPRCasFinder_Spacers.fasta
+        checksum: sha1$bdd6090031c89e46cc3d3299066367c921d5fb31
+        class: File
+        location: Any
+        path: Any
+        size: 3627
+      - basename: ERR1234567_bin.2_CRISPRCasFinder_Spacers.fasta
+        checksum: sha1$bdd6090031c89e46cc3d3299066367c921d5fb31
+        class: File
+        location: Any
+        path: Any
+        size: 3627
+    crisprcasfinder_gff:
+      - basename: ERR1234567_bin.1_CRISPRCasFinder.gff3
+        checksum: sha1$ddcdbbd534b7b3623fab87254ae8689c8e1200dd
+        class: File
+        location: Any
+        path: Any
+        size: 16716
+      - basename: ERR1234567_bin.2_CRISPRCasFinder.gff3
+        checksum: sha1$ddcdbbd534b7b3623fab87254ae8689c8e1200dd
+        class: File
+        location: Any
+        path: Any
+        size: 16716
+

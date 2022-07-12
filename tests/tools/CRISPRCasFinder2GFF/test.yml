@@ -1,0 +1,7 @@
+seq_name:
+  class: File
+  format: edam:format_1929
+  path: ../../in/ERR1234567_bin.1.fa
+in_json:
+  class: File
+  path: ../../out/result.json
