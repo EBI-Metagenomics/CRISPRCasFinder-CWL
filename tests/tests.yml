@@ -6,11 +6,11 @@
   output:
     crisprcasfinder_json:
       basename: result.json
-      #checksum: sha1$36317ca0daa17ba411a75e40ddc44dc86fdf75ff
+      #no checksum as file has date run at the start
       class: File
       location: Any
       path: Any
-      size: 17534
+      size: 17533 # this might also be an issue if date/time has extra whitespace
 - job: tools/CRISPRCasFinder2Fasta/test.yml
   tool: ../src/tools/CRISPRCasFinder2Fasta.cwl
   short_name: CRISPRCasFinder2Fasta.cwl
