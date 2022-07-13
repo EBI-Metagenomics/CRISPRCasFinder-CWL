@@ -1,0 +1,4 @@
+sequences:
+  class: File
+  format: http://edamontology.org/format_1929
+  path: ../../in/ERR1234567_bin.1.fa

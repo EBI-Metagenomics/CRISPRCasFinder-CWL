@@ -19,18 +19,15 @@ inputs:
     type: string?
     label: path to the sel392v2.so file, required by vmatch
     default: /opt/CRISPRCasFinder/sel392v2.so
-  casDefinition:
-    type: string?
+  cas_definition:
+    type:
+    - type: enum
+      symbols:
+        - G
+        - T
+        - S
     label: Cas-finder definition, such as G (general), T (Typing) or S (Subtyping)
     default: G
-  spacer_fasta:
-    type: string?
-    label: Fasta with spacer sequences
-    default: "CRISPRCasFinder_Spacers.fasta"
-  crisprcas_gff:
-    type: string?
-    label: GFF3 with CRISPRCas results
-    default: "CRISPRCasFinder.gff3"
 
 outputs:
   #crisprcasfinder_json:
@@ -48,29 +45,29 @@ outputs:
 steps:
     run_crispcasfinder:
       label: run CRIPRCasFinder tool
-      run: CRISPRCasFinder.cwl
+      run: ../tools/CRISPRCasFinder.cwl
       in:
         sequences: sequences
         soFile: soFile
-        casDefinition: casDefinition
+        cas_definition: cas_definition
       out:
         - crisprcasfinder_json
 
     convert2fasta:
       label: extract spacer sequences as fasta
-      run: CRISPRCasFinder2Fasta.cwl
+      run: ../tools/CRISPRCasFinder2Fasta.cwl
       in:
+        seq_name: sequences
         in_json: run_crispcasfinder/crisprcasfinder_json
-        out_fasta: spacer_fasta
       out:
         - crisprcasfinder_fasta
 
     convert2gff:
       label: convert output to GFF3
-      run: CRISPRCasFinder2GFF.cwl
+      run: ../tools/CRISPRCasFinder2GFF.cwl
       in:
+        seq_name: sequences
         in_json: run_crispcasfinder/crisprcasfinder_json
-        out_gff: crisprcas_gff
       out:
         - crisprcasfinder_gff
 
