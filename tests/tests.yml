@@ -10,7 +10,7 @@
       class: File
       location: Any
       path: Any
-      size: 17533 # this might also be an issue if date/time has extra whitespace
+      size: Any # this is also an issue if date/time has extra whitespace or digit
 - job: tools/CRISPRCasFinder2Fasta/test.yml
   tool: ../src/tools/CRISPRCasFinder2Fasta.cwl
   short_name: CRISPRCasFinder2Fasta.cwl
