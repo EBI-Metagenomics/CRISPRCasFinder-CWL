@@ -23,13 +23,6 @@ inputs:
     type: string?
     label: Cas-finder definition, such as G (general), T (Typing) or S (Subtyping)
     default: G
-  spacer_fasta:
-    type: string?
-    label: Fasta with spacer sequences
-  crisprcas_gff:
-    type: string?
-    label: GFF3 with CRISPRCas results
-
 
 outputs:
   #crisprcasfinder_json:
@@ -61,7 +54,6 @@ steps:
       in:
         seq_name: sequences
         in_json: run_crispcasfinder/crisprcasfinder_json
-        out_fasta: spacer_fasta
       out:
         - crisprcasfinder_fasta
 
@@ -71,11 +63,8 @@ steps:
       in:
         seq_name: sequences
         in_json: run_crispcasfinder/crisprcasfinder_json
-        out_gff: crisprcas_gff
       out:
         - crisprcasfinder_gff
-
-
 
 
 $namespaces:
