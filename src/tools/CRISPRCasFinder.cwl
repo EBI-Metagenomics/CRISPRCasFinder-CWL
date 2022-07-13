@@ -40,7 +40,12 @@ inputs:
       position: 2
       prefix: -so
   cas_definition:
-    type: string?
+    type:
+    - type: enum
+      symbols:
+        - G
+        - T
+        - S
     label: Cas-finder definition, such as G (general), T (Typing) or S (Subtyping)
     default: G
     inputBinding:

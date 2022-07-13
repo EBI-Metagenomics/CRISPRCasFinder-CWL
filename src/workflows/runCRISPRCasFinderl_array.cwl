@@ -21,8 +21,9 @@ inputs:
     label: path to the sel392v2.so file, required by vmatch
     default: /opt/CRISPRCasFinder/sel392v2.so
   cas_definition:
-    type: enum
-    symbols:
+    type:
+    - type: enum
+      symbols:
         - G
         - T
         - S
