@@ -6,7 +6,7 @@
   output:
     crisprcasfinder_json:
       basename: result.json
-      #no checksum as file has date run at the start
+      checksum: Any #file has run date at the start
       class: File
       location: Any
       path: Any

@@ -19,7 +19,7 @@ inputs:
     type: string?
     label: path to the sel392v2.so file, required by vmatch
     default: /opt/CRISPRCasFinder/sel392v2.so
-  casDefinition:
+  cas_definition:
     type: string?
     label: Cas-finder definition, such as G (general), T (Typing) or S (Subtyping)
     default: G
@@ -44,7 +44,7 @@ steps:
       in:
         sequences: sequences
         soFile: soFile
-        casDefinition: casDefinition
+        cas_definition: cas_definition
       out:
         - crisprcasfinder_json
 

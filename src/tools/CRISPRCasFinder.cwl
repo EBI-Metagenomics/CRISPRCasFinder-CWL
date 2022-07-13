@@ -39,7 +39,7 @@ inputs:
     inputBinding:
       position: 2
       prefix: -so
-  casDefinition:
+  cas_definition:
     type: string?
     label: Cas-finder definition, such as G (general), T (Typing) or S (Subtyping)
     default: G
